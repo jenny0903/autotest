@@ -1044,7 +1044,7 @@ $('#J_test_api_start').click(function(){
 					api_obj_id = api_fail_list[api_fail].obj_id;
 					api_obj_code = api_fail_list[api_fail].obj_code;
 					api_obj_data = api_fail_list[api_fail].obj_data;
-					$('#J_result_block .result_inner .result_part').eq(return_api_num).append(tpl.api_fail_box.replace('{fail_id}',api_obj_id).replace('{fail_code}',api_obj_code).replace('{fail_data}',api_obj_data));
+					$('#J_result_block .result_inner .result_part').eq(return_api_num).find('.api_fail_obj').append(tpl.api_fail_box.replace('{fail_id}',api_obj_id).replace('{fail_code}',api_obj_code).replace('{fail_data}',api_obj_data));
 				}
 				return_api_num++;
 			}
@@ -1074,7 +1074,7 @@ $('#J_test_scheme_start').click(function(){
 			var scheme_id, scheme_name, scheme_success, scheme_fail,scheme_code;
 			var scheme_num = 0;
 			var scheme_time, scheme_time_code;
-			var time_num;
+			var time_num, api_num;
 			var api_id, api_name, api_code;
 			var api_success, api_fail_list, api_fail_time, api_obj_id, api_obj_code, api_obj_data;
 			tpl.appendResult();
@@ -1089,17 +1089,30 @@ $('#J_test_scheme_start').click(function(){
 				for(time in scheme_code){
 					scheme_time = scheme_code[time].time;
 					scheme_time_code = scheme_code[time].time_code;
-					$('#J_result_block .result_inner').append(tpl.scheme_result_wrap.replace('{scheme_name}',scheme_name).replace('{scheme_success}',scheme_success).replace('{scheme_fail}',scheme_fail));
-					scheme_result_part_box
+					$('#J_result_block .result_inner .result_part').eq(scheme_num).find('.scheme_box').append(tpl.scheme_result_part_box.replace('{scheme_time}',scheme_time));
 					for(api_list in scheme_time_code){
 						api_id = scheme_time_code[api_list].id;
 						api_name = api_id_to_name(api_id);
 						api_code = scheme_time_code[api_list].api_code;
-						
+						api_success = api_code.success;
+						api_fail_list = api_code.fail;
+						api_fail_time = api_fail_list.length;
+						$('#J_result_block .result_inner .result_part').eq(scheme_num).find('.scheme_part').eq(time_num).find('.api_box').append(tpl.scheme_result_api_part_box.replace('{api_name}',api_name).replace('{api_success}',api_success).replace('{api_failed}',api_fail_time));
+						api_num = 0;
+						for(api_fail in api_fail_list){
+							api_obj_id = api_fail_list[api_fail].obj_id;
+							api_obj_code = api_fail_list[api_fail].obj_code;
+							api_obj_data = api_fail_list[api_fail].obj_data;
+							$('#J_result_block .result_inner .result_part').eq(scheme_num).find('.scheme_part').eq(time_num).find('.api_part').eq(api_num).find('.api_fail_obj').append(tpl.api_fail_box.replace('{fail_id}',api_obj_id).replace('{fail_code}',api_obj_code).replace('{fail_data}',api_obj_data));
+							api_num++;
+						}
+						time_num++;
 					}
 				}
+				scheme_num++;
 			}
 			tpl.hideLoading();
+			tpl.showResult();
 		}
 	});
 });
