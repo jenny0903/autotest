@@ -1,6 +1,4 @@
 <?php
-include_once('curl.php');
-
 $api = $_POST['api'];
 
 $api =  json_decode($api,true);

@@ -1,0 +1,70 @@
+****************************************************************
+curl -kis "http://10.32.1.5:8081/1.0/user" -X POST -d '{"name":"tom","email":"tom@cliq.com","password":"000000"}'
+
+curl -kis http://10.32.1.5:8081/1.0/user/oauth2/access_token \
+-X POST \
+-d '{"email":"tom@cliq.com","password":"000000","device":"web"}'
+
+curl -kis "http://10.32.1.5:8081/1.0/user/me" \
+-H "Authorization: Bearer 0721-fa49e94d-415f-4615-b7a9-f014493bd90a"
+
+curl -kis "http://10.32.1.5:8081/1.0/user" -X POST -d '{"name":"tom","email":"tom@cliq.com","password":"000000"}'
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+Content-Length: 0
+
+curl -kis http://10.32.1.5:8081/1.0/user/oauth2/access_token \
+> -X POST \
+> -d '{"email":"tom@cliq.com","password":"000000","device":"web"}'
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+Content-Length: 131
+
+{"access_token":"0721-fa49e94d-415f-4615-b7a9-f014493bd90a","token_type":"bearer","scope":["album"],"state":"","resource_owner":""}
+
+
+curl -kis "http://10.32.1.5:8081/1.0/user/me" \
+> -H "Authorization: Bearer 0721-fa49e94d-415f-4615-b7a9-f014493bd90a"
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+Content-Length: 299
+
+{"id":"0721-6e1aa49d-3cd0-497d-9f45-a8106c88230c","name":"tom","email":"tom@cliq.com","email_verified":false,"mobile":"","mobile_verified":false,"create_date":"2014-04-10T09:34:06.000Z","mod_date":"2014-04-10T09:34:06.000Z","level":"","status":"","gender":"","lang":"","quota":{"max_num_albums":20}}
+
+
+**********************************************************
+curl -kis "http://10.32.1.5:8081/1.0/user" -X POST -d '{"name":"jerry","email":"jerry@cliq.com","password":"000000"}'
+
+
+curl -kis http://10.32.1.5:8081/1.0/user/oauth2/access_token \
+-X POST \
+-d '{"email":"jerry@cliq.com","password":"000000","device":"web"}'
+
+curl -kis "http://10.32.1.5:8081/1.0/user/me" \
+-H "Authorization: Bearer 0260-928e804e-f9ff-47d0-8b58-a9deb6918866"
+
+
+
+curl -kis "http://10.32.1.5:8081/1.0/user" -X POST -d '{"name":"jerry","email":"jerry@cliq.com","password":"000000"}'
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+Content-Length: 0
+
+curl -kis http://10.32.1.5:8081/1.0/user/oauth2/access_token \
+> -X POST \
+> -d '{"email":"jerry@cliq.com","password":"000000","device":"web"}'
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+Content-Length: 131
+
+{"access_token":"0260-928e804e-f9ff-47d0-8b58-a9deb6918866","token_type":"bearer","scope":["album"],"state":"","resource_owner":""}
+
+
+
+curl -kis "http://10.32.1.5:8081/1.0/user/me" \
+> -H "Authorization: Bearer 0260-928e804e-f9ff-47d0-8b58-a9deb6918866"
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+Content-Length: 303
+
+{"id":"0260-2453f899-e321-4822-8c98-a27f2d11ada6","name":"jerry","email":"jerry@cliq.com","email_verified":false,"mobile":"","mobile_verified":false,"create_date":"2014-04-10T09:36:15.000Z","mod_date":"2014-04-10T09:36:15.000Z","level":"","status":"","gender":"","lang":"","quota":{"max_num_albums":20}}
