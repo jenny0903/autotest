@@ -1,3 +1,6 @@
+登录方式 ：http://dev.daxiangce123.com/user/tomJerryLogin
+
+
 ****************************************************************
 TOM
 
@@ -54,3 +57,23 @@ Content-Type: application/json; charset=UTF-8
 Content-Length: 303
 
 {"id":"0260-2453f899-e321-4822-8c98-a27f2d11ada6","name":"jerry","email":"jerry@cliq.com","email_verified":false,"mobile":"","mobile_verified":false,"create_date":"2014-04-10T09:36:15.000Z","mod_date":"2014-04-10T09:36:15.000Z","level":"","status":"","gender":"","lang":"","quota":{"max_num_albums":20}}
+
+
+**********************************************************
+album
+
+{"code":1,"data":{"limit":2,"has_more":false,"albums":[{"id":"0721-d84784f2-1cd2-4eb4-9339-5577b685cc9c","name":"album2","create_date":"2014-04-10T10:10:57.000Z","mod_date":"2014-04-10T10:10:57.000Z","creator":"0721-6e1aa49d-3cd0-497d-9f45-a8106c88230c","owner":"0721-6e1aa49d-3cd0-497d-9f45-a8106c88230c","link":"jlEgVEgB0","size":0,"members":1,"invite_code":"104705"},{"id":"0721-f9b4a73a-4ca5-428e-97eb-f68a17f8d3fe","name":"album1","create_date":"2014-04-10T10:10:50.000Z","mod_date":"2014-04-10T10:10:50.000Z","creator":"0721-6e1aa49d-3cd0-497d-9f45-a8106c88230c","owner":"0721-6e1aa49d-3cd0-497d-9f45-a8106c88230c","link":"wp8yUykIW","size":1,"members":2,"invite_code":"104704"}]}}
+
+
+
+**********************************************************
+file
+
+{"code":1,"data":{"limit":1,"has_more":false,"files":[{"info":{"creator":"0721-6e1aa49d-3cd0-497d-9f45-a8106c88230c","create_date_first":"2014-04-10T10:11:54.000Z","batch_id":"D2CBB29E-7B13-4AED-A668-3F0E07A19FB3"},"files":[{"id":"0721-1e38565d-f702-4497-ac79-a4cf625fc668","title":"test.jpg","name":"B1697A57-01F1-560F-F929-28F5164C776D","create_date":"2014-04-10T10:11:54.000Z","mod_date":"2014-04-10T10:11:54.000Z","album":"0721-f9b4a73a-4ca5-428e-97eb-f68a17f8d3fe","creator":"0721-6e1aa49d-3cd0-497d-9f45-a8106c88230c","owner":"0721-6e1aa49d-3cd0-497d-9f45-a8106c88230c","size":115956,"digest":"bef546f36b7a240149b51f359d41a9ee","status":"active","link":"Y2y05Tx4f","batch_id":"D2CBB29E-7B13-4AED-A668-3F0E07A19FB3","seq_num":1,"offset":115956,"has_thumb":true,"mime_type":"image/jpeg","comments":1,"likes":0}]}]}}
+
+
+
+**********************************************************
+comment
+
+{"code":1,"data":{"limit":1,"has_more":false,"comments":[{"id":"0721-fda48a6d-4cf3-41b7-aee3-cce5418fcdbc","obj_id":"0721-1e38565d-f702-4497-ac79-a4cf625fc668","obj_type":"file","user_id":"0260-2453f899-e321-4822-8c98-a27f2d11ada6","msg":"beautiful","create_date":"2014-04-10T10:14:24.000Z","reply_to_user":"","user_name":"jerry","reply_to_user_name":""}]}}
