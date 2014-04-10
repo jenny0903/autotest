@@ -1,0 +1,1137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+<title>Cliq Automatic Test</title>
+<link href="base.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="container">
+	<h1>Cliq Automatic Test</h1>
+    <div class="api_select_wrap">
+    	<h1>APIs</h1>
+		<div class="part_wrap">
+			<h2>Users</h2>
+			<ul>
+<!--				<li>
+                	<input id="u01" class="select_test" type="checkbox" autocomplete="off" />
+                    <label for="u01">Create New User</label>
+					<input type="text" class="test_time" value="1" />
+                </li>
+				<li>
+					<input id="u02" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="u02">Client Authentication</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="u03" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="u03">OAuth Bind Account</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="u04" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="u04">OAuth Unbind Account</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="u05" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="u05">List OAuth Bindings</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="u06" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="u06">Unbind Device</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="u07" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="u07">Get User Information</label>
+					<input type="text" class="test_time" value="1" />
+				</li>-->
+				<li>
+					<input id="u01" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="u01">Update User Information</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="u02" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="u02">Set Avatar</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="u03" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="u03">Get Avatar</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+			</ul>
+		</div>
+		<div class="part_wrap">
+			<h2>Album</h2>
+			<ul>
+				<li>
+					<input id="a01" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="a01">Get Album Information</label>
+					<input type="text" class="test_time" value="1" />
+					</li>
+				<li>
+					<input id="a02" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="a02">List All Albums</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="a03" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="a03">Create New Album</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="a04" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="a04">Update An Album</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="a05" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="a05">Delete An Album</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="a06" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="a06">Get Album Items</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="a07" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="a07">Get Album Members</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="a08" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="a08">Join An Album</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="a09" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="a09">Leave An Album</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="a10" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="a10">Set Member Role</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="a11" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="a11">Get Member Role</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="a12" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="a12">Get Album Activities</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+			</ul>
+		</div>
+		<div class="part_wrap">
+			<h2>File</h2>
+			<ul>
+				<li>
+					<input id="f01" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="f01">Get File Information</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+<!--				<li>
+					<input id="f02" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="f02">Create New File</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="f03" class="select_test" type="checkbox" disabled="disabled"/>
+					<label for="f03">Upload File Content via Pre-Signed URL</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="f04" class="select_test" type="checkbox" disabled="disabled"/>
+					<label for="f04">Download File Content via Pre-Signed URL</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="f05" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="f05">Upload File Content</label>
+					<input type="text" class="test_time" value="1" />
+				</li>-->
+				<li>
+					<input id="f02" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="f02">Create New File + Upload File Content</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="f03" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="f03">Download File Content</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+<!--				<li>
+					<input id="f07" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="f07">Update File</label>
+					<input type="text" class="test_time" value="1" />
+				</li>-->
+				<li>
+					<input id="f04" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="f04">Delete A File</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="f05" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="f05">Copy A File</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="f06" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="f06">Get Comments</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="f07" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="f07">Get Comments Count</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="f08" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="f08">Post Comment 评论</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="f09" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="f09">Post Comment 回复</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="f10" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="f10">Delete Comment</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="f11" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="f11">Get Like List</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="f12" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="f12">Get Likes Count</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="f13" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="f13">Like A File</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="f14" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="f14">Dis-like A File</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+				<li>
+					<input id="f15" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="f15">Check If A User Has Liked A File</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+			</ul>
+		</div>
+		<div class="part_wrap">
+			<h2>Thumbnail</h2>
+			<ul>
+				<li>
+					<input id="t01" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="t01">Download Thumbnail Content</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+			</ul>
+		</div>
+		<div class="part_wrap">
+			<h2>Link</h2>
+			<ul>
+				<li>
+					<input id="l01" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="l01">Access By Link</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+<!--				<li>
+					<input id="l02" class="select_test" type="checkbox" disabled="disabled"/>
+					<label for="l02">Access By Link With Password</label>
+					<input type="text" class="test_time" value="1" />
+				</li>-->
+			</ul>
+		</div>
+		<div class="part_wrap">
+			<h2>Event</h2>
+			<ul>
+				<li>
+					<input id="e01" class="select_test" type="checkbox" autocomplete="off" />
+					<label for="e01">Get Events</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+<!--				<li>
+					<input id="e02" class="select_test" type="checkbox" disabled="disabled"/>
+					<label for="e02">Clear Event</label>
+					<input type="text" class="test_time" value="1" />
+				</li>-->
+			</ul>
+		</div>
+<!--		<div class="part_wrap">
+			<h2>Search</h2>
+			<ul>
+				<li>
+					<input id="s01" class="select_test" type="checkbox" disabled="disabled"/>
+					<label for="s01">Search Operation</label>
+					<input type="text" class="test_time" value="1" />
+				</li>
+			</ul>
+		</div>-->
+		<div class="save_wrap">
+			<label for="package_name">Save selected API as a scheme:</label>
+			<input type="text" class="package_name_input" id="J_package_name" name="package_name" value="" autocomplete="off" />
+			<a class="btn btn_disable save_package_btn" id="J_save_api_package" href="javascript:;">Save scheme</a>
+		</div>
+		<a class="btn btn_disable api_start_btn" id="J_test_api_start" href="javascript:;">API Start</a>
+    </div>
+	<div class="package_select_wrap">
+		<h1>Schemes</h1>
+		<div id="J_package_wrap">
+<!--			<div class="part_wrap" data="Scheme1">
+				<div class="scheme_name">
+					<input class="select_test" type="checkbox"/>
+					<label>Scheme 1</label>
+					<input type="text" class="test_time" value="1" />
+				</div>
+				<ul class="scheme_item">
+					<li>Search Operation 3 time(s)</li>
+					<li>Search Operation 3 time(s)</li>
+					<li>Search Operation 3 time(s)</li>
+					<li>Search Operation 3 time(s)</li>
+				</ul>
+			</div>
+			<div class="part_wrap" data="Scheme2">
+				<div class="scheme_name">
+					<input class="select_test" type="checkbox" />
+					<label>Scheme 2</label>
+					<input type="text" class="test_time" value="1" />
+				</div>
+				<ul class="scheme_item">
+					<li>Search Operation 3 time(s)</li>
+					<li>Search Operation 3 time(s)</li>
+					<li>Search Operation 3 time(s)</li>
+					<li>Search Operation 3 time(s)</li>
+				</ul>
+			</div>
+			<div class="part_wrap" data="Scheme3">
+				<div class="scheme_name">
+					<input class="select_test" type="checkbox" />
+					<label>Scheme 3</label>
+					<input type="text" class="test_time" value="1" />
+				</div>
+				<ul class="scheme_item">
+					<li>Search Operation 3 time(s)</li>
+					<li>Search Operation 3 time(s)</li>
+					<li>Search Operation 3 time(s)</li>
+					<li>Search Operation 3 time(s)</li>
+				</ul>
+			</div>-->
+		</div>
+		<div class="scheme_btn_box">
+			<a class="btn btn_disable scheme_start_btn" id="J_test_scheme_start" href="javascript:;">Scheme Start</a>
+			<a class="btn btn_disable scheme_start_btn" id="J_test_scheme_delete" href="javascript:;">Delete Scheme</a>
+		</div>
+	</div>
+</div>
+<!--<div class="blockUIblack" id="J_message_block">
+	<div class="block_message">loading...</div>
+</div>-->
+<!--<div class="blockUIblack" id="J_result_block">
+	<div class="result_wrap">
+    	<a class="btn result_close_btn" href="javascript:;" id="J_close_btn">close</a>
+    	<h1>Test Result</h1>
+    	<div class="result_box">
+        	<ul class="result_inner">-->
+<!--				<li class="result_part">
+					<div class="scheme_name">scheme name 1</div>
+					<div class="scheme_success">Success 3 time(s)</div>
+					<div class="scheme_fail">Failed 3 time(s)</div>
+					<ul class="scheme_box">
+						<li class="scheme_part">
+							<div class="scheme_time">Scheme Test Time: 1</div>
+							<ul class="api_box">
+								<li class="api_part">
+									<div class="api_name">Create New File + Upload File Content</div>
+									<div class="api_success">Success 3 time(s)</div>
+									<div class="api_fail">Failed 3 time(s)</div>
+									<ul class="api_fail_obj">
+										<li class="fail_part">
+											<span class="fail_id">Failed at: 2</span>
+											<span class="fail_code">Return code: 404</span>
+											<span class="fail_data">Detail: Can not found file</span>
+										</li>
+										<li class="fail_part">
+											<span class="fail_id">Failed at: 2</span>
+											<span class="fail_code">Return code: 404</span>
+											<span class="fail_data">Detail: Can not found file</span>
+										</li>
+										<li class="fail_part">
+											<span class="fail_id">Failed at: 2</span>
+											<span class="fail_code">Return code: 404</span>
+											<span class="fail_data">Detail: Can not found file</span>
+										</li>
+									</ul>
+								</li>
+								<li class="api_part">
+									<div class="api_name">Create New File + Upload File Content</div>
+									<div class="api_success">Success 3 time(s)</div>
+									<div class="api_fail">Failed 3 time(s)</div>
+									<ul class="api_fail_obj">
+										<li class="fail_part">
+											<span class="fail_id">Failed at: 2</span>
+											<span class="fail_code">Return code: 404</span>
+											<span class="fail_data">Detail: Can not found file</span>
+										</li>
+										<li class="fail_part">
+											<span class="fail_id">Failed at: 2</span>
+											<span class="fail_code">Return code: 404</span>
+											<span class="fail_data">Detail: Can not found file</span>
+										</li>
+										<li class="fail_part">
+											<span class="fail_id">Failed at: 2</span>
+											<span class="fail_code">Return code: 404</span>
+											<span class="fail_data">Detail: Can not found file</span>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="scheme_part">
+							<div class="scheme_time">Scheme Test Time: 1</div>
+							<ul class="api_box">
+								<li class="api_part">
+									<div class="api_name">Create New File + Upload File Content</div>
+									<div class="api_success">Success 3 time(s)</div>
+									<div class="api_fail">Failed 3 time(s)</div>
+									<ul class="api_fail_obj">
+										<li class="fail_part">
+											<span class="fail_id">Failed at: 2</span>
+											<span class="fail_code">Return code: 404</span>
+											<span class="fail_data">Detail: Can not found file</span>
+										</li>
+										<li class="fail_part">
+											<span class="fail_id">Failed at: 2</span>
+											<span class="fail_code">Return code: 404</span>
+											<span class="fail_data">Detail: Can not found file</span>
+										</li>
+										<li class="fail_part">
+											<span class="fail_id">Failed at: 2</span>
+											<span class="fail_code">Return code: 404</span>
+											<span class="fail_data">Detail: Can not found file</span>
+										</li>
+									</ul>
+								</li>
+								<li class="api_part">
+									<div class="api_name">Create New File + Upload File Content</div>
+									<div class="api_success">Success 3 time(s)</div>
+									<div class="api_fail">Failed 3 time(s)</div>
+									<ul class="api_fail_obj">
+										<li class="fail_part">
+											<span class="fail_id">Failed at: 2</span>
+											<span class="fail_code">Return code: 404</span>
+											<span class="fail_data">Detail: Can not found file</span>
+										</li>
+										<li class="fail_part">
+											<span class="fail_id">Failed at: 2</span>
+											<span class="fail_code">Return code: 404</span>
+											<span class="fail_data">Detail: Can not found file</span>
+										</li>
+										<li class="fail_part">
+											<span class="fail_id">Failed at: 2</span>
+											<span class="fail_code">Return code: 404</span>
+											<span class="fail_data">Detail: Can not found file</span>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li class="result_part">
+					<div class="scheme_name">scheme name 1</div>
+					<div class="scheme_success">Success 3 time(s)</div>
+					<div class="scheme_fail">Failed 3 time(s)</div>
+					<ul class="scheme_box">
+						<li class="scheme_part">
+							<div class="scheme_time">Scheme Test Time: 1</div>
+							<ul class="api_box">
+								<li class="api_part">
+									<div class="api_name">Create New File + Upload File Content</div>
+									<div class="api_success">Success 3 time(s)</div>
+									<div class="api_fail">Failed 3 time(s)</div>
+									<ul class="api_fail_obj">
+										<li class="fail_part">
+											<span class="fail_id">Failed at: 2</span>
+											<span class="fail_code">Return code: 404</span>
+											<span class="fail_data">Detail: Can not found file</span>
+										</li>
+										<li class="fail_part">
+											<span class="fail_id">Failed at: 2</span>
+											<span class="fail_code">Return code: 404</span>
+											<span class="fail_data">Detail: Can not found file</span>
+										</li>
+										<li class="fail_part">
+											<span class="fail_id">Failed at: 2</span>
+											<span class="fail_code">Return code: 404</span>
+											<span class="fail_data">Detail: Can not found file</span>
+										</li>
+									</ul>
+								</li>
+								<li class="api_part">
+									<div class="api_name">Create New File + Upload File Content</div>
+									<div class="api_success">Success 3 time(s)</div>
+									<div class="api_fail">Failed 3 time(s)</div>
+									<ul class="api_fail_obj">
+										<li class="fail_part">
+											<span class="fail_id">Failed at: 2</span>
+											<span class="fail_code">Return code: 404</span>
+											<span class="fail_data">Detail: Can not found file</span>
+										</li>
+										<li class="fail_part">
+											<span class="fail_id">Failed at: 2</span>
+											<span class="fail_code">Return code: 404</span>
+											<span class="fail_data">Detail: Can not found file</span>
+										</li>
+										<li class="fail_part">
+											<span class="fail_id">Failed at: 2</span>
+											<span class="fail_code">Return code: 404</span>
+											<span class="fail_data">Detail: Can not found file</span>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="scheme_part">
+							<div class="scheme_time">Scheme Test Time: 1</div>
+							<ul class="api_box">
+								<li class="api_part">
+									<div class="api_name">Create New File + Upload File Content</div>
+									<div class="api_success">Success 3 time(s)</div>
+									<div class="api_fail">Failed 3 time(s)</div>
+									<ul class="api_fail_obj">
+										<li class="fail_part">
+											<span class="fail_id">Failed at: 2</span>
+											<span class="fail_code">Return code: 404</span>
+											<span class="fail_data">Detail: Can not found file</span>
+										</li>
+										<li class="fail_part">
+											<span class="fail_id">Failed at: 2</span>
+											<span class="fail_code">Return code: 404</span>
+											<span class="fail_data">Detail: Can not found file</span>
+										</li>
+										<li class="fail_part">
+											<span class="fail_id">Failed at: 2</span>
+											<span class="fail_code">Return code: 404</span>
+											<span class="fail_data">Detail: Can not found file</span>
+										</li>
+									</ul>
+								</li>
+								<li class="api_part">
+									<div class="api_name">Create New File + Upload File Content</div>
+									<div class="api_success">Success 3 time(s)</div>
+									<div class="api_fail">Failed 3 time(s)</div>
+									<ul class="api_fail_obj">
+										<li class="fail_part">
+											<span class="fail_id">Failed at: 2</span>
+											<span class="fail_code">Return code: 404</span>
+											<span class="fail_data">Detail: Can not found file</span>
+										</li>
+										<li class="fail_part">
+											<span class="fail_id">Failed at: 2</span>
+											<span class="fail_code">Return code: 404</span>
+											<span class="fail_data">Detail: Can not found file</span>
+										</li>
+										<li class="fail_part">
+											<span class="fail_id">Failed at: 2</span>
+											<span class="fail_code">Return code: 404</span>
+											<span class="fail_data">Detail: Can not found file</span>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>-->
+<!--            	<li class="result_part">
+					<div class="api_name">Create New File + Upload File Content</div>
+					<div class="api_success">Success 3 time(s)</div>
+					<div class="api_fail">Failed 3 time(s)</div>
+					<ul class="api_fail_obj">
+						<li class="fail_part">
+							<span class="fail_id">Failed at: 2</span>
+							<span class="fail_code">Return code: 404</span>
+							<span class="fail_data">Detail: Can not found file</span>
+						</li>
+						<li class="fail_part">
+							<span class="fail_id">Failed at: 2</span>
+							<span class="fail_code">Return code: 404</span>
+							<span class="fail_data">Detail: Can not found file</span>
+						</li>
+						<li class="fail_part">
+							<span class="fail_id">Failed at: 2</span>
+							<span class="fail_code">Return code: 404</span>
+							<span class="fail_data">Detail: Can not found file</span>
+						</li>
+					</ul>
+				</li>
+				<li class="result_part">
+					<div class="api_name">Create New File + Upload File Content</div>
+					<div class="api_success">Success 3 time(s)</div>
+					<div class="api_fail">Failed 3 time(s)</div>
+					<ul class="api_fail_obj">
+						<li class="fail_part">
+							<span class="fail_id">Failed at: 2</span>
+							<span class="fail_code">Return code: 404</span>
+							<span class="fail_data">Detail: Can not found file</span>
+						</li>
+						<li class="fail_part">
+							<span class="fail_id">Failed at: 2</span>
+							<span class="fail_code">Return code: 404</span>
+							<span class="fail_data">Detail: Can not found file</span>
+						</li>
+						<li class="fail_part">
+							<span class="fail_id">Failed at: 2</span>
+							<span class="fail_code">Return code: 404</span>
+							<span class="fail_data">Detail: Can not found file</span>
+						</li>
+					</ul>
+				</li>
+				<li class="result_part">
+					<div class="api_name">Create New File + Upload File Content</div>
+					<div class="api_success">Success 3 time(s)</div>
+					<div class="api_fail">Failed 3 time(s)</div>
+					<ul class="api_fail_obj">
+						<li class="fail_part">
+							<span class="fail_id">Failed at: 2</span>
+							<span class="fail_code">Return code: 404</span>
+							<span class="fail_data">Detail: Can not found file</span>
+						</li>
+						<li class="fail_part">
+							<span class="fail_id">Failed at: 2</span>
+							<span class="fail_code">Return code: 404</span>
+							<span class="fail_data">Detail: Can not found file</span>
+						</li>
+						<li class="fail_part">
+							<span class="fail_id">Failed at: 2</span>
+							<span class="fail_code">Return code: 404</span>
+							<span class="fail_data">Detail: Can not found file</span>
+						</li>
+					</ul>
+				</li>-->
+<!--            </ul>
+        </div>
+    </div>
+</div>-->
+<!--<div class="blockUIblack" id="J_loading_block">
+	<span class="block_loading">loading...</span>
+</div>-->
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+var tpl = {
+	result_wrap : [
+		'<div class="blockUIblack hide" id="J_result_block">',
+			'<div class="result_wrap">',
+				'<a class="btn result_close_btn" href="javascript:;" id="J_close_btn">close</a>',
+				'<h1>Test Result</h1>',
+				'<div class="result_box">',
+					'<ul class="result_inner">',
+			        '</ul>',
+				'</div>',
+			'</div>',
+		'</div>'
+	].join(''),
+	api_fail_box :[
+		'<li class="fail_part">',
+			'<span class="fail_id">Failed at: {fail_id}</span>',
+			'<span class="fail_code">Return code: {fail_code}</span>',
+			'<span class="fail_data">Detail: {fail_data}</span>',
+		'</li>'
+	].join(''),
+	api_result_wrap : [
+		'<li class="result_part">',
+			'<div class="api_name">{api_name}</div>',
+			'<div class="api_success">Success {api_success} time(s)</div>',
+			'<div class="api_fail">Failed {api_failed} time(s)</div>',
+			'<ul class="api_fail_obj">',
+			'</ul>',
+		'</li>'
+	].join(''),
+	scheme_result_api_part_box : [
+		'<li class="api_part">',
+			'<div class="api_name">{api_name}</div>',
+			'<div class="api_success">Success {api_success} time(s)</div>',
+			'<div class="api_fail">Failed {api_failed} time(s)</div>',
+			'<ul class="api_fail_obj">',
+			'</ul>',
+		'</li>'
+	].join(''),
+	scheme_result_part_box : [
+		'<li class="scheme_part">',
+			'<div class="scheme_time">Scheme Test Time: {scheme_time}</div>',
+			'<ul class="api_box">',
+			'</ul>',
+		'</li>'
+	].join(''),
+	scheme_result_wrap:[
+		'<li class="result_part">',
+			'<div class="scheme_name">{scheme_name}</div>',
+			'<div class="scheme_success">Success {scheme_success} time(s)</div>',
+			'<div class="scheme_fail">Failed {scheme_fail} time(s)</div>',
+			'<ul class="scheme_box">',
+			'</ul>',
+		'</li>'
+	].join(''),
+	scheme_wrap : [
+		'<div class="part_wrap" data={scheme_id}>',
+			'<div class="scheme_name">',
+				'<input class="select_test" type="checkbox" />',
+				'<label>{scheme_name}</label>',
+				'<input type="text" class="test_time" value="1" />',
+			'</div>',
+			'<ul class="scheme_item">',
+			'</ul>',
+		'</div>'
+	].join(''),
+	scheme_content : '<li>{api_name} {api_time} time(s)</li>',
+	loading : [
+		'<div class="blockUIblack hide" id="J_loading_block">',
+			'<span class="block_loading">loading...</span>',
+		'</div>'
+	].join(''),
+	message : [
+		'<div class="blockUIblack hide" id="J_message_block">',
+			'<div class="block_message">loading...</div>',
+		'</div>'
+	].join(''),
+	showLoading : function(){
+		if($('#J_loading_block').length==0){
+			$('body').append(tpl.loading);
+			$('#J_loading_block').show();
+		}else{
+			$('#J_loading_block').show();
+		}
+	},
+	showMessage : function(message){
+		if($('#J_message_block').length==0){
+			$('body').append(tpl.message);
+			$('.block_message').text(message);
+			$('#J_message_block').show();
+		}else{
+			$('.block_message').text(message);
+			$('#J_message_block').show();
+		}
+	},
+	appendResult : function(){
+		if($('#J_result_block').length==0){
+			$('body').append(tpl.result_wrap);
+		}
+	},
+	showResult : function(){
+		$('#J_result_block').show();
+	},
+	hideLoading : function(){
+		$('#J_loading_block').hide();
+	},
+	hideMessage : function(){
+		$('#J_message_block').hide();
+	}
+}
+//判断按钮是否可用
+var flag = {
+	api_start : false,
+	api_save : false,
+	scheme_start : false,
+	scheme_delete : false,
+	check_api_start : function(){
+		var api_select = $(".api_select_wrap .select_test:checked").length;
+		if(api_select>0){
+			flag.api_start = true;
+			$('#J_test_api_start').removeClass('btn_disable');
+		}else{
+			flag.api_start = false;
+			$('#J_test_api_start').addClass('btn_disable');
+		}
+	},
+	check_scheme_start_delete : function(){
+		var package_select = $(".package_select_wrap .select_test:checked").length;
+		if(package_select>0){
+			flag.scheme_start = true;
+			flag.scheme_delete = true;
+			$('#J_test_scheme_start').removeClass('btn_disable');
+			$('#J_test_scheme_delete').removeClass('btn_disable');
+		}else{
+			flag.scheme_start = false;
+			flag.scheme_delete = false;
+			$('#J_test_scheme_start').addClass('btn_disable');
+			$('#J_test_scheme_delete').addClass('btn_disable');
+		}
+	},
+	check_package_name : function(){
+		var package_name = $('#J_package_name').val();
+		var api_select = $(".api_select_wrap .select_test:checked").length;
+		if(api_select>0 && package_name.length>0){
+			flag.api_save = true;
+			$('#J_save_api_package').removeClass('btn_disable');
+		}else{
+			flag.api_save = false;
+			$('#J_save_api_package').addClass('btn_disable');
+		}
+	}
+}
+
+function api_id_to_name(api_id){
+	var api_name;
+	switch(api_id){
+		case 'u01':
+			api_name = 'Update User Information';
+			break;
+		case 'u02':
+			api_name = 'Set Avatar';
+			break;
+		case 'u03':
+			api_name = 'Get Avatar';
+			break;
+			
+		case 'a01':
+			api_name = 'Get Album Information';
+			break;
+		case 'a02':
+			api_name = 'List All Albums';
+			break;
+		case 'a03':
+			api_name = 'Create New Album';
+			break;
+		case 'a04':
+			api_name = 'Update An Album';
+			break;
+		case 'a05':
+			api_name = 'Delete An Album';
+			break;
+		case 'a06':
+			api_name = 'Get Album Items';
+			break;
+		case 'a07':
+			api_name = 'Get Album Members';
+			break;
+		case 'a08':
+			api_name = 'Join An Album';
+			break;
+		case 'a09':
+			api_name = 'Leave An Album';
+			break;
+		case 'a10':
+			api_name = 'Set Member Role';
+			break;
+		case 'a11':
+			api_name = 'Get Member Role';
+			break;
+		case 'a12':
+			api_name = 'Get Album Activities';
+			break;
+			
+		case 'f01':
+			api_name = 'Get File Information';
+			break;
+		case 'f02':
+			api_name = 'Create New File + Upload File Content';
+			break;
+		case 'f03':
+			api_name = 'Download File Content';
+			break;
+		case 'f04':
+			api_name = 'Delete A File';
+			break;
+		case 'f05':
+			api_name = 'Copy A File';
+			break;
+		case 'f06':
+			api_name = 'Get Comments';
+			break;
+		case 'f07':
+			api_name = 'Get Comments Count';
+			break;
+		case 'f08':
+			api_name = 'Post Comment 评论';
+			break;
+		case 'f09':
+			api_name = 'Post Comment 回复';
+			break;
+		case 'f10':
+			api_name = 'Delete Comment';
+			break;
+		case 'f11':
+			api_name = 'Get Like List';
+			break;
+		case 'f12':
+			api_name = 'Get Likes Count';
+			break;
+		case 'f13':
+			api_name = 'Like A File';
+			break;
+		case 'f14':
+			api_name = 'Dis-like A File';
+			break;
+		case 'f15':
+			api_name = 'Check If A User Has Liked A File';
+			break;
+			
+		case 't01':
+			api_name = 'Download Thumbnail Content';
+			break;
+			
+		case 'l01':
+			api_name = 'Access By Link';
+			break;
+			
+		case 'e01':
+			api_name = 'Get Events';
+			break;
+	}
+	return api_name;
+}
+
+//获取方案列表
+tpl.showLoading();
+$.ajax({
+	type: "POST",
+	url: "get_scheme.php",
+	dataType:"JSON",
+	success: function(data){
+		tpl.hideLoading();
+		if(data.code==1){
+			var scheme_list = data.data;
+			var scheme_num = 0;
+			var scheme_name, scheme_id;
+			var api_name, api_id, api_time;
+			var api_list;
+			for(scheme in scheme_list){
+				scheme_name = scheme_list[scheme].scheme_name;
+				scheme_id = scheme_list[scheme].scheme_id;
+				$('#J_package_wrap').append(tpl.scheme_wrap.replace('{scheme_id}',scheme_id).replace('{scheme_name}',scheme_name));
+				api_list = scheme_list[scheme].scheme_obj;
+				for(api in api_list){
+					api_id = api_list[api].api_id;
+					api_time = api_list[api].api_time;
+					api_name = api_id_to_name(api_id);
+					$('#J_package_wrap .scheme_item').eq(scheme_num).append(tpl.scheme_content.replace('{api_name}',api_name).replace('{api_time}',api_time));
+				}
+				scheme_num++;
+			}
+		}else{
+			tpl.showMessage('Get Scheme Failed!');
+			setTimeout(tpl.hideMessage,3000);
+		}
+	}
+});
+$('#J_close_btn').die().live('click',function(){
+	$('.result_inner').children('*').remove();
+	$('#J_result_block').hide();
+});
+$('.api_select_wrap .select_test').click(function(){
+	flag.check_api_start();
+	flag.check_package_name();
+});
+$('.package_select_wrap .select_test').die().live('click',function(){
+	flag.check_scheme_start_delete();
+});
+$('#J_package_name').bind({
+	keyup : function(){
+		flag.check_package_name();
+	},
+	keydown : function(e){
+		if( e.keyCode == 13 ){
+			var package_name_origin = $('#J_package_name').val();
+			var package_name_new = package_name_origin.replace(/(^\s*)|(\s*$)/g,"");
+			$('#J_package_name').val(package_name_new);
+			flag.check_package_name();
+			if(flag.api_save){
+				save_package();
+			}
+		}
+	},
+	blur : function(){
+		var package_name_origin = $('#J_package_name').val();
+		var package_name_new = package_name_origin.replace(/(^\s*)|(\s*$)/g,"");
+		$('#J_package_name').val(package_name_new);
+	}
+});
+$('#J_save_api_package').click(function(){
+	var package_name_origin = $('#J_package_name').val();
+	var package_name_new = package_name_origin.replace(/(^\s*S)|(\s*$)/g,"");
+	$('#J_package_name').val(package_name_new);
+	if(flag.api_save){
+		save_package();
+	}
+});
+function save_package(){
+	var package_name = $('#J_package_name').val();
+	var select_array = [];
+	var select_api_id, select_api_time;
+	$(".api_select_wrap .select_test:checked").each(function(i){
+		select_api_id = $(this).attr('id');
+		select_api_time = $(this).parent('li').find('.test_time').val();
+		select_array[select_array.length]={select_id:select_api_id,test_time:select_api_time};		
+	});
+	var package_array = {package_name:package_name,package_content:select_array};
+	var package_json = JSON.stringify(package_array);
+	// console.log(package_json);
+	tpl.showLoading();
+	$.ajax({
+		type: "POST",
+		url: "save_scheme.php",
+		data: 'scheme='+package_json,
+		dataType:"JSON",
+		success: function(data){
+			tpl.hideLoading();
+			if(data.code==1){
+				tpl.showMessage('Save Scheme Success!');
+			}else{
+				tpl.showMessage('Save Scheme Failed!');
+			}
+			setTimeout(tpl.hideMessage,3000);
+			window.location.reload();
+		}
+	});
+};
+$('.test_time').bind({
+	keyup:function(){
+		var _this = $(this);
+		var _this_old_val = _this.val();
+		var _this_new_val = _this_old_val.replace(/\D/g,'');
+		_this.val(_this_new_val);
+	}
+});
+$('#J_test_api_start').click(function(){
+	var select_array = [];
+	var select_api_id, select_api_time;
+	$(".api_select_wrap .select_test:checked").each(function(i){
+		select_api_id = $(this).attr('id');
+		select_api_time = $(this).parent('li').find('.test_time').val();
+		select_array[select_array.length]={select_id:select_api_id,test_time:select_api_time};		
+	});
+	var select_json = JSON.stringify(select_array);
+	// console.log(select_json);
+	tpl.showLoading();
+	$.ajax({
+		type: "POST",
+		url: "",
+		data: 'api='+select_json,
+		dataType:"JSON",
+		success: function(data){
+			var return_api_list = data;
+			var return_api_num = 0;
+			var api_id, api_name, api_code;
+			var api_success, api_fail_list, api_fail_time, api_obj_id, api_obj_code, api_obj_data;
+			tpl.appendResult();
+			for(return_api in return_api_list){
+				api_id = return_api_list[return_api].id;
+				api_name = api_id_to_name(api_id);
+				api_code = return_api_list[return_api].api_code;
+				api_success = api_code.success;
+				api_fail_list = api_code.fail;
+				api_fail_time = api_fail_list.length;
+				$('#J_result_block .result_inner').append(tpl.api_result_wrap.replace('{api_name}',api_name).replace('{api_success}',api_success).replace('{api_failed}',api_fail_time));
+				for(api_fail in api_fail_list){
+					api_obj_id = api_fail_list[api_fail].obj_id;
+					api_obj_code = api_fail_list[api_fail].obj_code;
+					api_obj_data = api_fail_list[api_fail].obj_data;
+					$('#J_result_block .result_inner .result_part').eq(return_api_num).append(tpl.api_fail_box.replace('{fail_id}',api_obj_id).replace('{fail_code}',api_obj_code).replace('{fail_data}',api_obj_data));
+				}
+				return_api_num++;
+			}
+			tpl.hideLoading();
+			tpl.showResult();
+		}
+	});
+});
+$('#J_test_scheme_start').click(function(){
+	var select_array = [];
+	var select_scheme_id, select_scheme_time;
+	$(".package_select_wrap .select_test:checked").each(function(i){
+		select_scheme_id = $(this).parents('.part_wrap').attr('data');
+		select_scheme_time = $(this).parent('.scheme_name').find('.test_time').val();
+		select_array[select_array.length]={select_id:select_scheme_id,test_time:select_scheme_time};		
+	});
+	var select_json = JSON.stringify(select_array);
+	// console.log(select_json);
+	tpl.showLoading();
+	$.ajax({
+		type: "POST",
+		url: "",
+		data: 'scheme='+select_json,
+		dataType:"JSON",
+		success: function(data){
+			var scheme_list = data;
+			var scheme_id, scheme_name, scheme_success, scheme_fail,scheme_code;
+			var scheme_num = 0;
+			var scheme_time, scheme_time_code;
+			var time_num;
+			var api_id, api_name, api_code;
+			var api_success, api_fail_list, api_fail_time, api_obj_id, api_obj_code, api_obj_data;
+			tpl.appendResult();
+			for(scheme in scheme_list){
+				scheme_id = scheme_list[scheme].id;
+				scheme_name = $('#J_package_wrap .part_wrap[data='+scheme_id+']').find('.scheme_name label').text();
+				scheme_success = scheme_list[scheme].success;
+				scheme_fail = scheme_list[scheme].fail;
+				scheme_code = scheme_list[scheme].sch_code;
+				time_num = 0;
+				$('#J_result_block .result_inner').append(tpl.scheme_result_wrap.replace('{scheme_name}',scheme_name).replace('{scheme_success}',scheme_success).replace('{scheme_fail}',scheme_fail));
+				for(time in scheme_code){
+					scheme_time = scheme_code[time].time;
+					scheme_time_code = scheme_code[time].time_code;
+					$('#J_result_block .result_inner').append(tpl.scheme_result_wrap.replace('{scheme_name}',scheme_name).replace('{scheme_success}',scheme_success).replace('{scheme_fail}',scheme_fail));
+					scheme_result_part_box
+					for(api_list in scheme_time_code){
+						api_id = scheme_time_code[api_list].id;
+						api_name = api_id_to_name(api_id);
+						api_code = scheme_time_code[api_list].api_code;
+						
+					}
+				}
+			}
+			tpl.hideLoading();
+		}
+	});
+});
+$('#J_test_scheme_delete').click(function(){
+	var select_array = [];
+	var select_scheme_id;
+	$("#J_package_wrap .select_test:checked").each(function(i){
+		select_scheme_id = $(this).parents('.part_wrap').attr('data');
+		select_array[select_array.length]={select_id:select_scheme_id};		
+	});
+	var select_json = JSON.stringify(select_array);
+	// console.log(select_json);
+	tpl.showLoading();
+	$.ajax({
+		type: "POST",
+		url: "delete_scheme.php",
+		data: 'scheme='+select_json,
+		dataType:"JSON",
+		success: function(data){
+			tpl.hideLoading();
+			var scheme_id,scheme_code;
+			for(scheme in data){
+				scheme_id = data[scheme].id;
+				scheme_code = data[scheme].code;
+				if(scheme_code ==1){
+					$('#J_package_wrap .part_wrap[data='+scheme_id+']').slideUp(1000);
+				}
+			}
+			flag.check_scheme_start_delete();
+		}
+	});
+});
+</script>
+</body>
+</html>
