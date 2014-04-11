@@ -45,8 +45,46 @@ class Controller2{
 		return Curl::JSON($data);
 	}
 	function leave_album(){
+		$url1 =  SERVER_DOMAIN."/album";
+		$post_data1 = array(
+			"name" => Curl::guid(),
+		);
+		$result1 = Curl::postApi($url1,$post_data1);
+		$code1 = $result1['info_code'];
+		
+		if($code1 == 200){
+			$album_invite_code = $result1['result']['invite_code'];
+			$album_id = $result1['result']['id'];
+			// curl -kis "http://10.32.1.5:8081/1.0/join/VDFyHGaoX" -H "Authorization: Bearer 49624099-21c7-4a1c-a7df-63b664566e24" -X PUT -d '{"user_id":"9630a858-6695-4eb9-9bed-eb4d75324d3d"}'
+			$url2 =  SERVER_DOMAIN."/join/".$album_invite_code;
+			$put_data2 = array(
+				"user_id" => USER_ID2
+			);
+			$result2 = Curl::putApi($url2,$put_data2,'',2);
+			$code2 = $result2['info_code'];
+			if($code2 == 200){
+				// curl -kis "http://10.32.1.5:8081/1.0/member/49013874-7880-44c2-abba-93608f9b1597?uid=9630a858-6695-4eb9-9bed-eb4d75324d3d" -H "Authorization: Bearer 49624099-21c7-4a1c-a7df-63b664566e24" -X DELETE
+				$url3 =  SERVER_DOMAIN."/member/".$album_id.'?uid='.USER_ID2;
+				$result3 = Curl::delApi($url3,2);
+				$code3 = $result3['info_code'];
+				$data['code'] = $code3;
+				if($code3==200){
+					$data['data'] = 'leave album success';
+				}else{
+					$data['data'] = 'leave album failed';
+				}
+			}else{
+				$data['code'] = $code2;
+				$data['data'] = 'join album failed';
+			}
+		}else{
+			$data['code'] = $code;
+			$data['data'] = 'create album failed';
+		}
+		return Curl::JSON($data);
 	}
 	function set_member_role(){
+		
 	}
 	function get_member_role(){
 		// curl -kis "http://10.32.1.5:8081/1.0/member/49013874-7880-44c2-abba-93608f9b1597?uid=9630a858-6695-4eb9-9bed-eb4d75324d3d" -H "Authorization: Bearer 49624099-21c7-4a1c-a7df-63b664566e24"
