@@ -143,6 +143,20 @@ class Controller2{
 		return Curl::JSON($data);
 	}
 	function get_album_activities(){
+		// $url = $this->Curl_model->getUrl()."/album/activity/".$albumid."?uid=".$userid;
+		// $api_data = $this->Curl_model->getApi($url);
+		
+		$url = SERVER_DOMAIN."/album/activity/".ALBUM_ID."?uid=".USER_ID;
+		
+		$result = Curl::getApi($url);
+		$code = $result['info_code'];
+		$data['code'] = $code;
+		if($code == 200){
+			$data['data'] = $result['result'];
+		}else{
+			$data['data'] = 'get album activities failed';
+		}
+		return Curl::JSON($data);
 	}
 }
 ?>

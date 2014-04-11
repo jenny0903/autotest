@@ -6,5 +6,5 @@ $controller = new Controller2();
 // $result = $controller->leave_album(); // finish
 // $result = $controller->set_member_role(); // finish
 // $result = $controller->get_member_role(); // finish
-// $result = $controller->get_album_activities();
+// $result = $controller->get_album_activities(); // finish
 echo $result;
