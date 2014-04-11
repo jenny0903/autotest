@@ -309,8 +309,37 @@ class Controller2{
 	}
 
 	function list_like(){
+		// GET /file/like/{file_id}?pos={x}&limit={n}
+		// curl -kis "http://10.32.1.5:8081/1.0/file/like/33592fef-8db1-4d9d-a5db-47cf8a481039" -H "Authorization: Bearer 49624099-21c7-4a1c-a7df-63b664566e24"
+		
+		$url = SERVER_DOMAIN."/file/like/".FILE_ID;
+		
+		$result = Curl::getApi($url);
+		$code = $result['info_code'];
+		$data['code'] = $code;
+		if($code == 200){
+			$data['data'] = $result['result'];
+		}else{
+			$data['data'] = 'list like failed';
+		}
+		return Curl::JSON($data);
 	}
 	function count_like(){
+		// GET /file/like/count/{file_id}
+
+		// curl -kis "http://10.32.1.5:8081/1.0/file/like/count/33592fef-8db1-4d9d-a5db-47cf8a481039" -H "Authorization: Bearer 49624099-21c7-4a1c-a7df-63b664566e24"
+		
+		$url = SERVER_DOMAIN."/file/like/count/".FILE_ID;
+		
+		$result = Curl::getApi($url);
+		$code = $result['info_code'];
+		$data['code'] = $code;
+		if($code == 200){
+			$data['data'] = $result['result'];
+		}else{
+			$data['data'] = 'count like failed';
+		}
+		return Curl::JSON($data);
 	}
 	function post_like(){
 	}
