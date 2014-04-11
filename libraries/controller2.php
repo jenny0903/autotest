@@ -280,6 +280,32 @@ class Controller2{
 		return Curl::JSON($data);
 	}
 	function del_comment(){
+		$url1 = SERVER_DOMAIN."/file/comment/".FILE_ID;
+		$post_data1 = array(
+			"msg" => 'beautiful'
+		);
+		$result1 = Curl::postApi($url1,$post_data1);
+		$code1 = $result1['info_code'];
+		if($code1 == 200){
+			$comment_id = $result1['result']['id'];
+					
+			// $url = $this->Curl_model->getUrl()."/file/comment/".$commentid;
+			// $api_data = $this->Curl_model->deleteApi($url);  
+			
+			$url2 =  SERVER_DOMAIN."/file/comment/".$comment_id;
+			$result2 = Curl::delApi($url2);
+			$code2 = $result2['info_code'];
+			$data['code'] = $code2;
+			if($code2==200){
+				$data['data'] = 'delete comment success';
+			}else{
+				$data['data'] = 'delete comment failed';
+			}
+		}else{
+			$data['code'] = $code1;
+			$data['data'] = 'post comment failed';
+		}
+		return Curl::JSON($data);
 	}
 
 	function list_like(){
