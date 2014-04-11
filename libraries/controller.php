@@ -39,7 +39,7 @@ class Controller{
 		$code = $result['info_code'];
 		$data['code'] = $code ;
 		if($code == 200){
-			$data['data'] = 'get avatar success';
+			$data['data'] = "get avatar success";
 		}else{
 			$data['data'] = 'get avatar failed';
 		}
@@ -52,7 +52,7 @@ class Controller{
 		$code = $result['info_code'];
 		$data['code'] = $code ;
 		if($code == 200){
-			$data['data'] = 'get album info success';
+			$data['data'] = $result['result'];
 		}else{
 			$data['data'] = 'get album info failed';
 		}
@@ -65,7 +65,7 @@ class Controller{
 		$code = $result['info_code'];
 		$data['code'] = $code ;
 		if($code == 200){
-			$data['data'] = 'list albums success';
+			$data['data'] = $result['result'];
 		}else{
 			$data['data'] = 'list albums failed';
 		}
@@ -81,7 +81,7 @@ class Controller{
 		$code = $result['info_code'];
 		$data['code'] = $code ;
 		if($code == 200){
-			$data['data'] = 'create album success';
+			$data['data'] = $result['result'];
 		}else{
 			$data['data'] = 'create album failed';
 		}
@@ -97,7 +97,7 @@ class Controller{
 		$code = $result['info_code'];
 		$data['code'] = $code ;
 		if($code == 200){
-			$data['data'] = 'update album success';
+			$data['data'] = $result['result'];
 		}else{
 			$data['data'] = 'update album failed';
 		}
@@ -105,15 +105,14 @@ class Controller{
 	}
 	
 	function del_album(){
+		$ 
+	
 		$url =  SERVER_DOMAIN."/album/".ALBUM_ID;
-		$put_data = array(
-			"name" => "album1nameupdate",
-		);
-		$result = Curl::putApi($url,$put_data);
+		$result = Curl::delApi($url);
 		$code = $result['info_code'];
 		$data['code'] = $code ;
 		if($code == 200){
-			$data['data'] = 'update album success';
+			$data['data'] = $result['result'];
 		}else{
 			$data['data'] = 'update album failed';
 		}

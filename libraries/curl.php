@@ -119,7 +119,7 @@ class Curl{
 		return($data);
 	}
 
-	public static function deleteApi($url){
+	public static function delApi($url){
 		$curl = curl_init();
 		curl_setopt($curl, CURLOPT_URL, $url);                 
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE); // 对认证证书来源的检查     
@@ -144,7 +144,7 @@ class Curl{
 	public static function arrayRecursive(&$array){  
 		foreach ($array as $key => $value) {  
 			if (is_array($value)) {  
-				arrayRecursive($array[$key]);//如果是数组就进行递归操作  
+				self::arrayRecursive($array[$key]);//如果是数组就进行递归操作  
 			} else {  
 				if(is_string($value)){  
 					$temp1= addslashes($value);
