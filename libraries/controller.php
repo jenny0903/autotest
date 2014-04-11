@@ -59,6 +59,67 @@ class Controller{
 		return Curl::JSON($data);
 	}
 
+	function list_albums(){
+		$url =  SERVER_DOMAIN."/album/".ALBUM_ID;
+		$result = Curl::getApi($url);
+		$code = $result['info_code'];
+		$data['code'] = $code ;
+		if($code == 200){
+			$data['data'] = 'list albums success';
+		}else{
+			$data['data'] = 'list albums failed';
+		}
+		return Curl::JSON($data);
+	}
+	
+	function create_album(){
+		$url =  SERVER_DOMAIN."/album";
+		$post_data = array(
+			"name" => Curl::guid(),
+		);
+		$result = Curl::postApi($url,$post_data);
+		$code = $result['info_code'];
+		$data['code'] = $code ;
+		if($code == 200){
+			$data['data'] = 'create album success';
+		}else{
+			$data['data'] = 'create album failed';
+		}
+		return Curl::JSON($data);
+	}
+	
+	function update_album(){
+		$url =  SERVER_DOMAIN."/album/".ALBUM_ID;
+		$put_data = array(
+			"name" => "album1nameupdate",
+		);
+		$result = Curl::putApi($url,$put_data);
+		$code = $result['info_code'];
+		$data['code'] = $code ;
+		if($code == 200){
+			$data['data'] = 'update album success';
+		}else{
+			$data['data'] = 'update album failed';
+		}
+		return Curl::JSON($data);
+	}
+	
+	function del_album(){
+		$url =  SERVER_DOMAIN."/album/".ALBUM_ID;
+		$put_data = array(
+			"name" => "album1nameupdate",
+		);
+		$result = Curl::putApi($url,$put_data);
+		$code = $result['info_code'];
+		$data['code'] = $code ;
+		if($code == 200){
+			$data['data'] = 'update album success';
+		}else{
+			$data['data'] = 'update album failed';
+		}
+		return Curl::JSON($data);
+	}
+	
 
 }
 

@@ -10,7 +10,7 @@ class Curl{
 	static $cookie = CLIQ_TOKEN;
 	
 	public static function setCookie($cookie){
-		$this->cookie = $cookie;
+		 self::$cookie = $cookie;
 	}
 	
 	public static function getCookie(){
@@ -92,16 +92,16 @@ class Curl{
 		return($data);
 	}
 
-	public static function postApi($url,$post_data = '',$is_file = 0,$size = ''){
+	public static function postApi($url,$post_data = '',$size = ''){
 		$curl = curl_init();
 		curl_setopt($curl, CURLOPT_URL, $url);                  
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);   
 		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE);       
 		curl_setopt($curl, CURLOPT_POST, 1); 
-		if($is_file == 1){
+		$aHeader[] = self::getCookie(); 
+		if($size != ''){
 			$aHeader[] = 'Content-Range:bytes 0-'.$size.'/'.$size;
-		}
-		$aHeader[] = $this->getCookie(); 		
+		}	
 		curl_setopt($curl, CURLOPT_HTTPHEADER, $aHeader);
 		$post_data = $post_data ? json_encode($post_data) : ''; 
 		curl_setopt($curl, CURLOPT_POSTFIELDS, $post_data);
@@ -125,7 +125,7 @@ class Curl{
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE); // 对认证证书来源的检查     
 		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE); // 从证书中检查SSL加密算法是否存在  
 		curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");  // 发送一个常规的Delete请求 
-		curl_setopt($curl, CURLOPT_HTTPHEADER, Array($this->getCookie()));	
+		curl_setopt($curl, CURLOPT_HTTPHEADER, Array(self::getCookie()));	
 		curl_setopt($curl, CURLOPT_HEADER, 0); 
 		curl_setopt($curl, CURLOPT_TIMEOUT, 30);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -160,6 +160,23 @@ class Curl{
 		self::arrayRecursive($array);//先将类型为字符串的数据进行 urlencode  
 		$json = json_encode($array);//再将数组转成JSON  
 		return urldecode($json);//最后将JSON字符串进行urldecode  
+	}
+	
+	//生成唯一id
+	public static function guid(){
+		if (function_exists('com_create_guid')){
+			return com_create_guid();
+		}else{
+			mt_srand((double)microtime()*10000);//optional for php 4.2.0 and up.
+			$charid = strtoupper(md5(uniqid(rand(), true)));
+			$hyphen = chr(45);
+			$uuid = substr($charid, 0, 8).$hyphen
+					.substr($charid, 8, 4).$hyphen
+					.substr($charid,12, 4).$hyphen
+					.substr($charid,16, 4).$hyphen
+					.substr($charid,20,12);
+			return $uuid;
+		}
 	}
 	
 }
