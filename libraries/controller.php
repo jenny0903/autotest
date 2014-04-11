@@ -11,7 +11,7 @@ class Controller{
 		$code = $result['info_code'];
 		$data['code'] = $code;
 		if($code == 200){
-			$data['data'] = '';
+			$data['data'] = 'update user info success';
 		}else{
 			$data['data'] = 'update user info failed';
 		}
@@ -26,7 +26,7 @@ class Controller{
 		$code = $result['info_code'];
 		$data['code'] = $code ;
 		if($code == 200){
-			$data['data'] = '';
+			$data['data'] = 'set avatar success';
 		}else{
 			$data['data'] = 'set avatar failed';
 		}
@@ -39,9 +39,22 @@ class Controller{
 		$code = $result['info_code'];
 		$data['code'] = $code ;
 		if($code == 200){
-			$data['data'] = '';
+			$data['data'] = 'get avatar success';
 		}else{
 			$data['data'] = 'get avatar failed';
+		}
+		return Curl::JSON($data);
+	}
+	
+	function get_album_info(){
+		$url =  SERVER_DOMAIN."/album/".ALBUM_ID;
+		$result = Curl::getApi($url);
+		$code = $result['info_code'];
+		$data['code'] = $code ;
+		if($code == 200){
+			$data['data'] = 'get album info success';
+		}else{
+			$data['data'] = 'get album info failed';
 		}
 		return Curl::JSON($data);
 	}
