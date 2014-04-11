@@ -1,23 +1,31 @@
 <?php
 define("SERVER_DOMAIN","http://10.32.1.5:8081/1.0");
 define("CLIQ_TOKEN","Authorization: Bearer 0721-fa49e94d-415f-4615-b7a9-f014493bd90a");
+define("CLIQ_TOKEN2","Authorization: Bearer 0260-928e804e-f9ff-47d0-8b58-a9deb6918866");
 define("USER_ID","0721-6e1aa49d-3cd0-497d-9f45-a8106c88230c");
+define("USER_ID2","0260-2453f899-e321-4822-8c98-a27f2d11ada6");
 define("ALBUM_ID","0721-f9b4a73a-4ca5-428e-97eb-f68a17f8d3fe");
 define("FILE_ID","0721-1e38565d-f702-4497-ac79-a4cf625fc668");
 define("COMMENT_ID","0721-fda48a6d-4cf3-41b7-aee3-cce5418fcdbc");
 
 class Curl{
 	static $cookie = CLIQ_TOKEN;
+	static $cookie2 = CLIQ_TOKEN2;
 	
 	public static function setCookie($cookie){
 		 self::$cookie = $cookie;
+		 self::$cookie2 = $cookie2;
 	}
 	
-	public static function getCookie(){
-		return  self::$cookie;
+	public static function getCookie($flag){
+		if($flag == 1){
+			return  self::$cookie;
+		}else{
+			return  self::$cookie2;
+		}
 	}
 
-	public static function getContentApi($url){
+	public static function getContentApi($url,$flag = 1){
 		$curl = curl_init();
 		curl_setopt($curl, CURLOPT_URL, $url); // 要访问的地址  	
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE); // 对认证证书来源的检查     
@@ -25,7 +33,7 @@ class Curl{
 		curl_setopt($curl, CURLOPT_HEADER, 0); // 显示返回的Header区域内容 
 		curl_setopt($curl, CURLOPT_TIMEOUT, 120);// 设置超时限制防止死循环
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);// 获取的信息以文件流的形式返回
-		curl_setopt($curl, CURLOPT_HTTPHEADER, Array(self::getCookie()));//$this->getCookie
+		curl_setopt($curl, CURLOPT_HTTPHEADER, Array(self::getCookie($flag)));//$this->getCookie
 		$result = curl_exec($curl);
 		$info = curl_getinfo($curl);
 		curl_close($curl);
@@ -36,7 +44,7 @@ class Curl{
 		return($data);
 	}
 
-	public static function getApi($url){
+	public static function getApi($url,$flag = 1){
 		$curl = curl_init();
 		curl_setopt($curl, CURLOPT_URL, $url); // 要访问的地址                
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE); // 对认证证书来源的检查     
@@ -44,7 +52,7 @@ class Curl{
 		curl_setopt($curl, CURLOPT_HEADER, 0); // 显示返回的Header区域内容 
 		curl_setopt($curl, CURLOPT_TIMEOUT, 30);// 设置超时限制防止死循环
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);// 获取的信息以文件流的形式返回
-		curl_setopt($curl, CURLOPT_HTTPHEADER, Array(self::getCookie()));//$this->getCookie
+		curl_setopt($curl, CURLOPT_HTTPHEADER, Array(self::getCookie($flag)));//$this->getCookie
 		$result = curl_exec($curl);
 		$info = curl_getinfo($curl);
 		curl_close($curl);
@@ -56,14 +64,14 @@ class Curl{
 		return($data);
 	}
 
-	public static function putApi($url,$put_data = '',$size = ''){
+	public static function putApi($url,$put_data = '',$size = '',$flag = 1){
 		$curl = curl_init();
 		curl_setopt($curl, CURLOPT_URL, $url);                 
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE); // 对认证证书来源的检查     
 		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE); // 从证书中检查SSL加密算法是否存在   
 		curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT"); // 发送一个常规的Put请求
 		// $aHeader[] = $this->getCookie(); 
-		$aHeader[] = self::getCookie();
+		$aHeader[] = self::getCookie($flag);
 // echo  self::$cookie;
 // exit;
 		if($size != ''){
@@ -92,13 +100,13 @@ class Curl{
 		return($data);
 	}
 
-	public static function postApi($url,$post_data = '',$size = ''){
+	public static function postApi($url,$post_data = '',$size = '',$flag = 1){
 		$curl = curl_init();
 		curl_setopt($curl, CURLOPT_URL, $url);                  
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);   
 		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE);       
 		curl_setopt($curl, CURLOPT_POST, 1); 
-		$aHeader[] = self::getCookie(); 
+		$aHeader[] = self::getCookie($flag); 
 		if($size != ''){
 			$aHeader[] = 'Content-Range:bytes 0-'.$size.'/'.$size;
 		}	
@@ -119,13 +127,13 @@ class Curl{
 		return($data);
 	}
 
-	public static function delApi($url){
+	public static function delApi($url,$flag = 1){
 		$curl = curl_init();
 		curl_setopt($curl, CURLOPT_URL, $url);                 
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE); // 对认证证书来源的检查     
 		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE); // 从证书中检查SSL加密算法是否存在  
 		curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");  // 发送一个常规的Delete请求 
-		curl_setopt($curl, CURLOPT_HTTPHEADER, Array(self::getCookie()));	
+		curl_setopt($curl, CURLOPT_HTTPHEADER, Array(self::getCookie($flag)));	
 		curl_setopt($curl, CURLOPT_HEADER, 0); 
 		curl_setopt($curl, CURLOPT_TIMEOUT, 30);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
