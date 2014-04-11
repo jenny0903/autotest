@@ -7,6 +7,7 @@ define("USER_ID2","0260-2453f899-e321-4822-8c98-a27f2d11ada6");
 define("ALBUM_ID","0721-f9b4a73a-4ca5-428e-97eb-f68a17f8d3fe");
 define("FILE_ID","0721-1e38565d-f702-4497-ac79-a4cf625fc668");
 define("COMMENT_ID","0721-fda48a6d-4cf3-41b7-aee3-cce5418fcdbc");
+define("ALBUM_LINK","jlEgVEgB0");
 
 class Curl{
 	static $cookie = CLIQ_TOKEN;

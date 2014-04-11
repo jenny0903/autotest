@@ -158,5 +158,20 @@ class Controller2{
 		}
 		return Curl::JSON($data);
 	}
+	function link(){
+		// curl -kis "http://10.32.1.5:8081/1.0/link/fVd26Mmu2"
+		
+		$url = SERVER_DOMAIN."/link/".ALBUM_LINK;
+		
+		$result = Curl::getApi($url);
+		$code = $result['info_code'];
+		$data['code'] = $code;
+		if($code == 200){
+			$data['data'] = $result['result'];
+		}else{
+			$data['data'] = 'access by link failed';
+		}
+		return Curl::JSON($data);
+	}
 }
 ?>

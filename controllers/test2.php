@@ -7,4 +7,8 @@ $controller = new Controller2();
 // $result = $controller->set_member_role(); // finish
 // $result = $controller->get_member_role(); // finish
 // $result = $controller->get_album_activities(); // finish
+
+// $result = $controller->link(); // finish
+
+// $result = $controller->event();
 echo $result;
