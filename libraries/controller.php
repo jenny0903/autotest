@@ -105,21 +105,85 @@ class Controller{
 	}
 	
 	function del_album(){
-		$ 
-	
-		$url =  SERVER_DOMAIN."/album/".ALBUM_ID;
+		$createalbum = new Controller();
+		$createalbum = Controller::create_album();
+		$createalbum = json_decode($createalbum,true);	
+		$album_id = $createalbum['data']['id'];	
+		$url =  SERVER_DOMAIN."/album/".$album_id;
 		$result = Curl::delApi($url);
+		$code = $result['info_code'];
+		$data['code'] = $code ;
+		if($code == 200){
+			$data['data'] = 'delete album success';
+		}else{
+			$data['data'] = 'delete album failed';
+		}
+		return Curl::JSON($data);
+	}
+	
+	function get_file_list(){
+		$url =  SERVER_DOMAIN."/album/items/".ALBUM_ID;
+		$result = Curl::getApi($url);
 		$code = $result['info_code'];
 		$data['code'] = $code ;
 		if($code == 200){
 			$data['data'] = $result['result'];
 		}else{
-			$data['data'] = 'update album failed';
+			$data['data'] = 'get file list failed';
 		}
 		return Curl::JSON($data);
 	}
 	
-
+	function get_file_info(){
+		$url =  SERVER_DOMAIN."/file/".FILE_ID;
+		$result = Curl::getApi($url);
+		$code = $result['info_code'];
+		$data['code'] = $code ;
+		if($code == 200){
+			$data['data'] = $result['result'];
+		}else{
+			$data['data'] = 'get file info failed';
+		}
+		return Curl::JSON($data);
+	}
+	
+	function create_file(){
+	
+	}
+	
+	function download_file(){
+		$url =  SERVER_DOMAIN."/file/content/".FILE_ID;
+		$result = Curl::getContentApi($url);
+		$code = $result['info_code'];
+		$data['code'] = $code ;
+		if($code == 200){
+			$data['data'] = 'download file success';
+		}else{
+			$data['data'] = 'download file failed';
+		}
+		return Curl::JSON($data);
+	}
+	
+	function del_file(){
+		$createfile = new Controller();
+		$createfile = Controller::create_file();
+		$createfile = json_decode($createfile,true);	
+		$file_id = $createfile['data']['id'];	
+		$url =  SERVER_DOMAIN."/file/".$file_id;
+		$result = Curl::delApi($url);
+		$code = $result['info_code'];
+		$data['code'] = $code ;
+		if($code == 200){
+			$data['data'] = 'delete file success';
+		}else{
+			$data['data'] = 'delete file failed';
+		}
+		return Curl::JSON($data);
+	}
+	
+	function copy_file(){
+	
+	}
 }
 
 
