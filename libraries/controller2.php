@@ -173,5 +173,22 @@ class Controller2{
 		}
 		return Curl::JSON($data);
 	}
+	function event(){
+		// GET /event
+
+		// curl -kis "http://10.32.1.5:8081/1.0/event" -H "Authorization: Bearer f90eccb5-44a1-4e13-8995-68906ccc5647"
+		
+		$url = SERVER_DOMAIN."/event";
+		
+		$result = Curl::getApi($url);
+		$code = $result['info_code'];
+		$data['code'] = $code;
+		if($code == 200){
+			$data['data'] = $result['result'];
+		}else{
+			$data['data'] = 'get event list failed';
+		}
+		return Curl::JSON($data);
+	}
 }
 ?>

@@ -10,5 +10,5 @@ $controller = new Controller2();
 
 // $result = $controller->link(); // finish
 
-// $result = $controller->event();
+// $result = $controller->event(); // finish
 echo $result;
