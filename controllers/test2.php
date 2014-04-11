@@ -13,7 +13,7 @@ $controller = new Controller2();
 // $result = $controller->event(); // finish
 
 // $result = $controller->list_comment(); // finish
-// $result = $controller->count_comment();
+// $result = $controller->count_comment(); // finish
 // $result = $controller->post_comment();
 // $result = $controller->reply_comment();
 // $result = $controller->del_comment();

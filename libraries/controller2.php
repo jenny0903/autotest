@@ -207,6 +207,20 @@ class Controller2{
 		return Curl::JSON($data);
 	}
 	function count_comment(){
+		// $url = $this->Curl_model->getUrl()."/file/comment/count/".$fileid;
+		// $api_data = $this->Curl_model->getApi($url);  
+		
+		$url = SERVER_DOMAIN."/file/comment/count/".FILE_ID;
+		
+		$result = Curl::getApi($url);
+		$code = $result['info_code'];
+		$data['code'] = $code;
+		if($code == 200){
+			$data['data'] = $result['result'];
+		}else{
+			$data['data'] = 'count comment failed';
+		}
+		return Curl::JSON($data);
 	}
 	function post_comment(){
 	}
