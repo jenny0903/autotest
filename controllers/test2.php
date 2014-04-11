@@ -11,4 +11,17 @@ $controller = new Controller2();
 // $result = $controller->link(); // finish
 
 // $result = $controller->event(); // finish
+
+// $result = $controller->list_comment(); // finish
+// $result = $controller->count_comment();
+// $result = $controller->post_comment();
+// $result = $controller->reply_comment();
+// $result = $controller->del_comment();
+
+// $result = $controller->list_like();
+// $result = $controller->count_like();
+// $result = $controller->post_like();
+// $result = $controller->del_like();
+// $result = $controller->like_flag();
+
 echo $result;

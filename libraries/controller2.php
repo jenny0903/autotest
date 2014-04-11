@@ -190,5 +190,40 @@ class Controller2{
 		}
 		return Curl::JSON($data);
 	}
+	function list_comment(){
+		// $url = $this->Curl_model->getUrl()."/file/comment/".$fileid."?pos=".$pos."&limit=".$limit;
+		// $api_data = $this->Curl_model->getApi($url);
+		
+		$url = SERVER_DOMAIN."/file/comment/".FILE_ID;
+		
+		$result = Curl::getApi($url);
+		$code = $result['info_code'];
+		$data['code'] = $code;
+		if($code == 200){
+			$data['data'] = $result['result'];
+		}else{
+			$data['data'] = 'list comment failed';
+		}
+		return Curl::JSON($data);
+	}
+	function count_comment(){
+	}
+	function post_comment(){
+	}
+	function reply_comment(){
+	}
+	function del_comment(){
+	}
+
+	function list_like(){
+	}
+	function count_like(){
+	}
+	function post_like(){
+	}
+	function del_like(){
+	}
+	function like_flag(){
+	}
 }
 ?>
