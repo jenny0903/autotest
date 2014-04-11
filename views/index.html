@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
 <title>Cliq Automatic Test</title>
-<link href="base.css" rel="stylesheet" type="text/css" />
+<link href="../static/base.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -634,7 +634,7 @@
 <!--<div class="blockUIblack" id="J_loading_block">
 	<span class="block_loading">loading...</span>
 </div>-->
-<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../static/jquery-1.8.3.min.js"></script>
 <script type="text/javascript">
 var tpl = {
 	result_wrap : [
@@ -903,7 +903,7 @@ function api_id_to_name(api_id){
 tpl.showLoading();
 $.ajax({
 	type: "POST",
-	url: "get_scheme.php",
+	url: "../controllers/get_scheme.php",
 	dataType:"JSON",
 	success: function(data){
 		tpl.hideLoading();
@@ -987,7 +987,7 @@ function save_package(){
 	tpl.showLoading();
 	$.ajax({
 		type: "POST",
-		url: "save_scheme.php",
+		url: "../controllers/save_scheme.php",
 		data: 'scheme='+package_json,
 		dataType:"JSON",
 		success: function(data){
@@ -1128,7 +1128,7 @@ $('#J_test_scheme_delete').click(function(){
 	tpl.showLoading();
 	$.ajax({
 		type: "POST",
-		url: "delete_scheme.php",
+		url: "../controllers/delete_scheme.php",
 		data: 'scheme='+select_json,
 		dataType:"JSON",
 		success: function(data){
@@ -1138,6 +1138,7 @@ $('#J_test_scheme_delete').click(function(){
 				scheme_id = data[scheme].id;
 				scheme_code = data[scheme].code;
 				if(scheme_code ==1){
+					$('#J_package_wrap .part_wrap[data='+scheme_id+']').find('.select_test').removeAttr('checked');
 					$('#J_package_wrap .part_wrap[data='+scheme_id+']').slideUp(1000);
 				}
 			}
