@@ -14,8 +14,8 @@ $controller = new Controller2();
 
 // $result = $controller->list_comment(); // finish
 // $result = $controller->count_comment(); // finish
-// $result = $controller->post_comment();
-// $result = $controller->reply_comment();
+// $result = $controller->post_comment(); // finish
+// $result = $controller->reply_comment(); // finish
 // $result = $controller->del_comment();
 
 // $result = $controller->list_like();

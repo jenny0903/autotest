@@ -223,8 +223,61 @@ class Controller2{
 		return Curl::JSON($data);
 	}
 	function post_comment(){
+		// if($reply){
+			// $post_data = array(
+				// "msg" => $msg,
+				// "reply_to_user" => $reply
+			// );
+		// }else{
+			// $post_data = array(
+				// "msg" => $msg
+			// );
+		// }
+		// $url = $this->Curl_model->getUrl()."/file/comment/".$fileid;
+		// $api_data = $this->Curl_model->postApi($url,$post_data); 
+		
+		$url = SERVER_DOMAIN."/file/comment/".FILE_ID;
+		$post_data = array(
+			"msg" => 'beautiful'
+		);
+		$result = Curl::postApi($url,$post_data,'',2);
+		$code = $result['info_code'];
+		$data['code'] = $code;
+		if($code == 200){
+			$data['data'] = $result['result'];
+		}else{
+			$data['data'] = 'post comment failed';
+		}
+		return Curl::JSON($data);
 	}
 	function reply_comment(){
+		// if($reply){
+			// $post_data = array(
+				// "msg" => $msg,
+				// "reply_to_user" => $reply
+			// );
+		// }else{
+			// $post_data = array(
+				// "msg" => $msg
+			// );
+		// }
+		// $url = $this->Curl_model->getUrl()."/file/comment/".$fileid;
+		// $api_data = $this->Curl_model->postApi($url,$post_data);
+		
+		$url = SERVER_DOMAIN."/file/comment/".FILE_ID;
+		$post_data = array(
+			"msg" => 'reply beautiful',
+			"reply_to_user" => USER_ID2
+		);
+		$result = Curl::postApi($url,$post_data);
+		$code = $result['info_code'];
+		$data['code'] = $code;
+		if($code == 200){
+			$data['data'] = $result['result'];
+		}else{
+			$data['data'] = 'reply comment failed';
+		}
+		return Curl::JSON($data);
 	}
 	function del_comment(){
 	}
