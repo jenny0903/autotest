@@ -8,6 +8,7 @@ define("ALBUM_ID","0721-f9b4a73a-4ca5-428e-97eb-f68a17f8d3fe");
 define("FILE_ID","0721-1e38565d-f702-4497-ac79-a4cf625fc668");
 define("COMMENT_ID","0721-fda48a6d-4cf3-41b7-aee3-cce5418fcdbc");
 define("ALBUM_LINK","jlEgVEgB0");
+define("ALBUM_INVITE_CODE","104704");
 
 class Curl{
 	static $cookie = CLIQ_TOKEN;
@@ -24,6 +25,33 @@ class Curl{
 		}else{
 			return  self::$cookie2;
 		}
+	}
+	
+	public static function loginApi($url,$post_data = ''){
+		$curl = curl_init();
+		curl_setopt($curl, CURLOPT_URL, $url);                  
+		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);   
+		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE);       
+		curl_setopt($curl, CURLOPT_POST, 1); 
+		// $aHeader[] = self::getCookie($flag); 
+		// if($size != ''){
+			// $aHeader[] = 'Content-Range:bytes 0-'.$size.'/'.$size;
+		// }	
+		// curl_setopt($curl, CURLOPT_HTTPHEADER, $aHeader);
+		$post_data = $post_data ? json_encode($post_data) : ''; 
+		curl_setopt($curl, CURLOPT_POSTFIELDS, $post_data);
+		curl_setopt($curl, CURLOPT_TIMEOUT, 30);     
+		curl_setopt($curl, CURLOPT_HEADER, 0);     
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);    
+		$result = curl_exec($curl);
+		$info = curl_getinfo($curl);
+		curl_close($curl);
+		$result_array = json_decode($result,true);
+		$data = array(
+		 "info_code" => $info["http_code"],
+		 "result" => $result_array
+		);
+		return($data);
 	}
 
 	public static function getContentApi($url,$flag = 1){
