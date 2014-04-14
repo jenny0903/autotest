@@ -19,9 +19,9 @@ $controller = new Controller2();
 // $result = $controller->del_comment(); // finish
 
 // $result = $controller->list_like(); // finish
-$result = $controller->count_like(); // finish
+// $result = $controller->count_like(); // finish
 // $result = $controller->post_like();
 // $result = $controller->del_like();
-// $result = $controller->like_flag();
+// $result = $controller->like_flag(); // finish
 
 echo $result;

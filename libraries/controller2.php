@@ -346,6 +346,22 @@ class Controller2{
 	function del_like(){
 	}
 	function like_flag(){
+		// GET /file/like/{file_id}?user_id={user_id}
+
+		// curl -kis "http://10.32.1.5:8081/1.0/file/like/a1e318d5-a878-4c35-86cf-b7b19f65ec64" -H "Authorization: Bearer dc387898-5d74-40cb-8eb4-896d92ece532"
+		
+		$url = SERVER_DOMAIN."/file/like/".FILE_ID.'?uid='.USER_ID;
+		
+		$result = Curl::getApi($url);
+		$code = $result['info_code'];
+		if($code == 200 || $code ==204){
+			$data['code'] = 200;
+			$data['data'] = 'get like flag success';
+		}else{
+			$data['code'] = $code;
+			$data['data'] = 'get like flag failed';
+		}
+		return Curl::JSON($data);
 	}
 }
 ?>
