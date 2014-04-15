@@ -40,6 +40,8 @@
 		{
 			$scheme_tmp_array[] = $row;
 		}
+		// var_dump($scheme_tmp_array);
+		// exit;
 		$temp_scheme_content = Array();
 		foreach($scheme_tmp_array as $key=>$value){
 			if($key == 0){
@@ -59,6 +61,7 @@
 					'scheme_obj' => $temp_scheme_content
 				);
 				$temp_scheme_content = Array();
+				$temp_scheme_content[] = $scheme_tmp_array[$key];
 			}
 		}
 		$return_scheme_content[] = Array(

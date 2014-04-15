@@ -1,5 +1,5 @@
 <?php
-include_once('../controller.php');
+include_once('../libraries/controller.php');
 
 $api = $_POST['api'];
 $api =  json_decode($api,true);
@@ -7,111 +7,112 @@ $api =  json_decode($api,true);
 $data = array();
 $success = 0;
 $fail = array();
+$controller = new Controller();
 
 foreach($api as $value){
 	$api = $value['select_id'];
 	$time = $value['test_time'];
 	
-	for(var i = 0; i < $time; i++){
+	for($i = 0; $i < $time; $i++){
 		switch($api){
 			case 'u01':
-				$result = update_user_info();
+				$result = $controller->update_user_info();
 				break;
 			case 'u02':
-				$result = set_avatar();
+				$result = $controller->set_avatar();
 				break;
 			case 'u03':
-				$result = get_avatar();
+				$result = $controller->get_avatar();
 				break;
 			case 'a01':
-				$result = get_album_info();
+				$result = $controller->get_album_info();
 				break;
 			case 'a02':
-				$result = list_albums();
+				$result = $controller->list_albums();
 				break;
 			case 'a03':
-				$result = create_album();
+				$result = $controller->create_album();
 				break;
 			case 'a04':
-				$result = update_album();
+				$result = $controller->update_album();
 				break;
 			case 'a05':
-				$result = del_album();
+				$result = $controller->del_album();
 				break;
 			case 'a06':
-				$result = get_file_list();
+				$result = $controller->get_file_list();
 				break;
 			case 'a07':
-				$result = get_member_list();
+				$result = $controller->get_member_list();
 				break;
 			case 'a08':
-				$result = join_album();
+				$result = $controller->join_album();
 				break;
 			case 'a09':
-				$result = leave_album();
+				$result = $controller->leave_album();
 				break;
 			case 'a10':
-				$result = set_member_role();
+				$result = $controller->set_member_role();
 				break;
 			case 'a11':
-				$result = get_member_role();
+				$result = $controller->get_member_role();
 				break;
 			case 'a12':
-				$result = get_album_activities();
+				$result = $controller->get_album_activities();
 				break;
 			case 'f01':
-				$result = get_file_info();
+				$result = $controller->get_file_info();
 				break;
 			case 'f02':
-				$result = upload_file();
+				$result = $controller->upload_file();
 				break;
 			case 'f03':
-				$result = download_file();
+				$result = $controller->download_file();
 				break;
 			case 'f04':
-				$result = del_file();
+				$result = $controller->del_file();
 				break;
 			case 'f05':
-				$result = copy_file();
+				$result = $controller->copy_file();
 				break;
 			case 'f06':
-				$result = list_comment();
+				$result = $controller->list_comment();
 				break;
 			case 'f07':
-				$result = count_comment();
+				$result = $controller->count_comment();
 				break;
 			case 'f08':
-				$result = post_comment();
+				$result = $controller->post_comment();
 				break;
 			case 'f09':
-				$result = reply_comment();
+				$result = $controller->reply_comment();
 				break;
 			case 'f10':
-				$result = del_comment();
+				$result = $controller->del_comment();
 				break;
 			case 'f11':
-				$result = list_like();
+				$result = $controller->list_like();
 				break;
 			case 'f12':
-				$result = count_like();
+				$result = $controller->count_like();
 				break;
 			case 'f13':
-				$result = post_like();
+				$result = $controller->post_like();
 				break;
 			case 'f14':
-				$result = del_like();
+				$result = $controller->del_like();
 				break;
 			case 'f15':
-				$result = like_flag();
+				$result = $controller->like_flag();
 				break;
 			case 't01':
-				$result = thumbnail();
+				$result = $controller->thumbnail();
 				break;
 			case 'l01':
-				$result = link();
+				$result = $controller->link();
 				break;
 			case 'e01':
-				$result = event();
+				$result = $controller->event();
 				break;
 		}
 		$code = $result['code'];
@@ -120,20 +121,23 @@ foreach($api as $value){
 			$success++; 
 		}else{
 			$fail[] = array(
-				"object_id" => i,
-				"object_code" => $code,
-				"object_data" => $result['data']
+				"obj_id" => ($i+1),
+				"obj_code" => $code,
+				"obj_data" => $result['data']
 			);
 		}
 	}
 	$data[] = array(
-		"success" => $success,
-		"fail" => $fail
+		"id" => $api,
+		"api_code" => array(
+			"success" => $success,
+			"fail" => $fail
+		)
 	);
 	$success = 0;
 	$fail = array();
 }
 
-echo JSON($data);
+echo Curl::JSON($data);
 
 ?> 

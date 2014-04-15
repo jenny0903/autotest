@@ -16,7 +16,7 @@ class Controller{
 		}else{
 			$data['data'] = 'update user info failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 
 	function set_avatar(){
@@ -31,7 +31,7 @@ class Controller{
 		}else{
 			$data['data'] = 'set avatar failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 	function get_avatar(){
@@ -44,7 +44,7 @@ class Controller{
 		}else{
 			$data['data'] = 'get avatar failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 /*--album--*/	
 	function get_album_info(){
@@ -57,7 +57,7 @@ class Controller{
 		}else{
 			$data['data'] = 'get album info failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 
 	function list_albums(){
@@ -70,7 +70,7 @@ class Controller{
 		}else{
 			$data['data'] = 'list albums failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 	function create_album(){
@@ -86,7 +86,7 @@ class Controller{
 		}else{
 			$data['data'] = 'create album failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 	function update_album(){
@@ -102,13 +102,13 @@ class Controller{
 		}else{
 			$data['data'] = 'update album failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 	function del_album(){
 		$createalbum = new Controller();
 		$createalbum = Controller::create_album();
-		$createalbum = json_decode($createalbum,true);	
+		// $createalbum = json_decode($createalbum,true);	
 		$album_id = $createalbum['data']['id'];	
 		$url =  SERVER_DOMAIN."/album/".$album_id;
 		$result = Curl::delApi($url);
@@ -119,7 +119,7 @@ class Controller{
 		}else{
 			$data['data'] = 'delete album failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 	function get_file_list(){
@@ -132,7 +132,7 @@ class Controller{
 		}else{
 			$data['data'] = 'get file list failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 /*--member--*/	
@@ -148,7 +148,7 @@ class Controller{
 		}else{
 			$data['data'] = 'get member list failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 	function join_album(){
@@ -178,7 +178,7 @@ class Controller{
 			$data['code'] = $code ;
 			$data['data'] = 'create album failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 	function leave_album(){
@@ -218,7 +218,7 @@ class Controller{
 			$data['code'] = $code;
 			$data['data'] = 'create album failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 	function set_member_role(){
@@ -264,7 +264,7 @@ class Controller{
 			$data['code'] = $code;
 			$data['data'] = 'create album failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 	function get_member_role(){
@@ -279,7 +279,7 @@ class Controller{
 		}else{
 			$data['data'] = 'get member role failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 	function get_album_activities(){
@@ -296,7 +296,7 @@ class Controller{
 		}else{
 			$data['data'] = 'get album activities failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 /*--file--*/	
 	function get_file_info(){
@@ -309,7 +309,7 @@ class Controller{
 		}else{
 			$data['data'] = 'get file info failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 	function upload_file(){
@@ -361,7 +361,7 @@ class Controller{
 			}
 			
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 	function download_file(){
@@ -374,13 +374,13 @@ class Controller{
 		}else{
 			$data['data'] = 'download file failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 	function del_file(){
 		$uploadfile = new Controller();
 		$uploadfile = Controller::upload_file();
-		$uploadfile = json_decode($uploadfile,true);	
+		// $uploadfile = json_decode($uploadfile,true);	
 		$file_id = $uploadfile['data']['id'];	
 		$url =  SERVER_DOMAIN."/file/".$file_id;
 		$result = Curl::delApi($url);
@@ -391,7 +391,7 @@ class Controller{
 		}else{
 			$data['data'] = 'delete file failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 	function copy_file(){
@@ -409,7 +409,7 @@ class Controller{
 		}else{
 			$data['data'] = 'copy file failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 /*--comment--*/
@@ -427,7 +427,7 @@ class Controller{
 		}else{
 			$data['data'] = 'list comment failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 	function count_comment(){
@@ -444,7 +444,7 @@ class Controller{
 		}else{
 			$data['data'] = 'count comment failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 	function post_comment(){
@@ -473,7 +473,7 @@ class Controller{
 		}else{
 			$data['data'] = 'post comment failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 	function reply_comment(){
@@ -503,7 +503,7 @@ class Controller{
 		}else{
 			$data['data'] = 'reply comment failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 	function del_comment(){
@@ -532,7 +532,7 @@ class Controller{
 			$data['code'] = $code1;
 			$data['data'] = 'post comment failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 /*--like--*/	
@@ -550,7 +550,7 @@ class Controller{
 		}else{
 			$data['data'] = 'list like failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 	function count_like(){
@@ -568,7 +568,7 @@ class Controller{
 		}else{
 			$data['data'] = 'count like failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 	function post_like(){
@@ -705,7 +705,7 @@ class Controller{
 			$data['code'] = $code1;
 			$data['data'] = 'register a new user failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 	function del_like(){
@@ -867,7 +867,7 @@ class Controller{
 			$data['code'] = $code1;
 			$data['data'] = 'register a new user failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 	function like_flag(){
@@ -886,7 +886,7 @@ class Controller{
 			$data['code'] = $code;
 			$data['data'] = 'get like flag failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 /*--thumbnail--*/	
@@ -900,7 +900,7 @@ class Controller{
 		}else{
 			$data['data'] = 'get thumbnail failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 /*--link--*/	
@@ -917,7 +917,7 @@ class Controller{
 		}else{
 			$data['data'] = 'access by link failed';
 		}
-		return Curl::JSON($data);
+		return $data;
 	}
 	
 /*--event--*/	
@@ -936,7 +936,8 @@ class Controller{
 		}else{
 			$data['data'] = 'get event list failed';
 		}
-		return Curl::JSON($data);
+		return $data;
+	}
 }
 
 ?> 

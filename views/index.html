@@ -1023,7 +1023,7 @@ $('#J_test_api_start').click(function(){
 	tpl.showLoading();
 	$.ajax({
 		type: "POST",
-		url: "",
+		url: "../controllers/api_test.php",
 		data: 'api='+select_json,
 		dataType:"JSON",
 		success: function(data){
@@ -1066,7 +1066,7 @@ $('#J_test_scheme_start').click(function(){
 	tpl.showLoading();
 	$.ajax({
 		type: "POST",
-		url: "",
+		url: "../controllers/scheme_test.php",
 		data: 'scheme='+select_json,
 		dataType:"JSON",
 		success: function(data){
@@ -1091,7 +1091,7 @@ $('#J_test_scheme_start').click(function(){
 					scheme_time_code = scheme_code[time].time_code;
 					$('#J_result_block .result_inner .result_part').eq(scheme_num).find('.scheme_box').append(tpl.scheme_result_part_box.replace('{scheme_time}',scheme_time));
 					for(api_list in scheme_time_code){
-						api_id = scheme_time_code[api_list].id;
+						api_id = scheme_time_code[api_list].api_id;
 						api_name = api_id_to_name(api_id);
 						api_code = scheme_time_code[api_list].api_code;
 						api_success = api_code.success;
@@ -1104,10 +1104,10 @@ $('#J_test_scheme_start').click(function(){
 							api_obj_code = api_fail_list[api_fail].obj_code;
 							api_obj_data = api_fail_list[api_fail].obj_data;
 							$('#J_result_block .result_inner .result_part').eq(scheme_num).find('.scheme_part').eq(time_num).find('.api_part').eq(api_num).find('.api_fail_obj').append(tpl.api_fail_box.replace('{fail_id}',api_obj_id).replace('{fail_code}',api_obj_code).replace('{fail_data}',api_obj_data));
-							api_num++;
 						}
-						time_num++;
+						api_num++;
 					}
+					time_num++;
 				}
 				scheme_num++;
 			}
