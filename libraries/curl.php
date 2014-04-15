@@ -105,11 +105,15 @@ class Curl{
 // exit;
 		if($size != ''){
 			$aHeader[] = 'Content-Range:bytes 0-'.$size.'/'.$size;
+		}else{
+			$put_data = $put_data ? json_encode($put_data) : ''; 
 		}
+// echo  $size;
+// exit;
 // var_dump($aHeader);
 // exit;
 		curl_setopt($curl, CURLOPT_HTTPHEADER, $aHeader);
-		$put_data = $put_data ? json_encode($put_data) : ''; 
+		// $put_data = $put_data ? json_encode($put_data) : ''; 	
 // var_dump($put_data);
 // exit;
 		curl_setopt($curl, CURLOPT_POSTFIELDS, $put_data); 	// Put提交的数据包	
