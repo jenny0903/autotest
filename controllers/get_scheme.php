@@ -77,6 +77,6 @@
 		$data['code'] = 0;
 		$data['data'] = 'get scheme error';
 	}
-	
+	mysql_close($con);
 	echo JSON($data);
 ?>

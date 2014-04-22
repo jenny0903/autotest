@@ -77,5 +77,7 @@
 		$data['data'] = 'save scheme failed';
 	}
 	
+	mysql_close($con);
+	
 	echo JSON($data);
 ?>

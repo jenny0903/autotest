@@ -48,6 +48,7 @@
 			);
 		}
 	}
+	mysql_close($con);
 	
 	echo JSON($return_data);
 ?>
